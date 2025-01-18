@@ -1,0 +1,712 @@
+body {
+    direction: rtl;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2c3e50;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الشريط العلوي */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* تنسيق الشعار */
+.logo {
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* قائمة الروابط */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #3498db;
+    transform: scale(1.1);
+}
+
+/* قائمة التطبيقات */
+.app-links a {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 30px;
+    transition: color 0.3s;
+}
+
+.app-links a:hover {
+    color: #3498db;
+}
+
+/* تنسيق نافذة القائمة الجانبية */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #2c3e50;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.side-menu a {
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #3498db;
+}
+
+/* زر فتح القائمة */
+.side-menu-btn {
+    font-size: 30px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* تخصيص عند الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    .nav-links {
+        display: none;
+        /* إخفاء القائمة الرئيسية عند الشاشات الصغيرة */
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        gap: 15px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .app-links {
+        margin-top: 20px;
+    }
+
+    .app-links a {
+        font-size: 28px;
+    }
+
+    .side-menu a {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .side-menu-btn {
+        display: block;
+        background-color: #2c3e50;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+
+/* إخفاء نافذة القائمة الجانبية في الشاشات المتوسطة والكبيرة */
+@media (min-width: 769px) {
+    .side-menu {
+        display: none;
+        /* إخفاء القائمة الجانبية في الشاشات الكبيرة */
+    }
+
+    .side-menu-btn {
+        display: none;
+        /* إخفاء زر فتح القائمة في الشاشات الكبيرة */
+    }
+
+    .nav-links {
+        display: flex;
+        /* إظهار القائمة العلوية في الشاشات الكبيرة */
+    }
+}
+
+/* تنسيق السلايدر ليغطي عرض الصفحة */
+.slider {
+    position: relative;
+    width: 100%;
+    /* عرض السلايدر 100% من عرض نافذة المتصفح */
+    height: 400px;
+    /* ارتفاع السلايدر يتناسب مع الصورة */
+    margin: 0;
+    overflow: hidden;
+}
+
+/* تنسيق الصور داخل السلايدر */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    /* التأكد من تناسق الصور مع عرض السلايدر */
+    height: 100%;
+    /* الحفاظ على النسبة الأصلية للصورة */
+    object-fit: fill;
+    /* ملاءمة الصورة بشكل مناسب داخل السلايدر */
+    border-radius: 10px;
+}
+
+/* تنسيق أزرار التنقل */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* تنسيق النقاط أسفل السلايدر */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.actives {
+    background-color: #717171;
+}
+
+/* why us */
+
+.why-us-section {
+    background-color: #2c3e50;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.why-us-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.why-us-title span {
+    color: #e74c3c;
+}
+
+.why-us-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.cardwyus {
+    background-color: #34495e;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardwyus:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cardwyus h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #e74c3c;
+}
+
+.cardwyus p {
+    font-size: 16px;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+}
+
+.cardwyus ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cardwyus ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .why-us-cardwyuss {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardwyus {
+        width: 80%;
+    }
+}
+
+
+
+/* why us */
+
+
+/* Subscription Cards Section Styles */
+
+.packages-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #2d3e50;
+    color: white;
+}
+
+.packages-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.packages-description {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #bdc3c7;
+}
+
+.package-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.package-card {
+    background-color: #34495e;
+    width: 300px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    color: white;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    /* تحديد ارتفاع الكارد */
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.package-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #e74c3c;
+    margin: 20px 0;
+}
+
+.package-period {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #fbff00;
+}
+
+.package-features {
+    list-style: square;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.package-features li {
+    margin: 12px 0;
+    
+    /* direction: rtl; */
+    
+}
+
+.subscribe-btn {
+    display: inline-block;
+    background-color: #3498db;
+    /* لون الخلفية الأزرق */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    /* حواف منحنية */
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    /* إضافة انتقال سلس */
+    border: 2px solid #3498db;
+    /* إضافة حدود بنفس اللون */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* تأثير الظل */
+}
+
+.subscribe-btn:hover {
+    background-color: #2980b9;
+    /* تغيير اللون عند المرور بالماوس */
+    border-color: #2980b9;
+    /* تغيير لون الحدود */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* تأثير الظل عند المرور بالماوس */
+    transform: translateY(-5px);
+    /* تحريك الزر للأعلى */
+}
+
+.subscribe-btn:active {
+    transform: translateY(2px);
+    /* تأثير عند الضغط على الزر */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* تقليل تأثير الظل عند الضغط */
+}
+
+.subscribe-btn .icon {
+    margin-right: 10px;
+    /* مسافة بين الأيقونة والنص */
+    font-size: 20px;
+    /* حجم الأيقونة */
+}
+
+.package-card:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 60px;
+    height: 6px;
+    background-color: #e74c3c;
+    border-radius: 3px;
+    transform: translateX(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .package-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* FAQ Section Styles */
+.faq-section {
+    background-color: #34495e;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.faq-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #e74c3c;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #2c3e50;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item-header {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #1abc9c;
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.faq-item-header:hover {
+    background-color: #16a085;
+}
+
+.faq-item-body {
+    padding: 15px;
+    font-size: 16px;
+    color: #ecf0f1;
+    display: none;
+    /* مخفي بشكل افتراضي */
+    background-color: #34495e;
+    border-radius: 0 0 8px 8px;
+}
+
+.faq-item.activeq .faq-item-body {
+    display: block;
+    /* يظهر عند إضافة الكلاس activeq */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faq-title {
+        font-size: 28px;
+    }
+
+    .faq-container {
+        padding: 0 20px;
+    }
+}
+
+/* Main Content Styles */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.data-item {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.data-item:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.data-item i {
+    margin-left: 10px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.input-message-container {
+    margin-top: 20px;
+}
+
+.input-message-container textarea {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #128C7E;
+}
+
+.loading {
+    display: none;
+    color: #007bff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .input-message-container textarea {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav.nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav.nav ul li {
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+
+    .carousel {
+        height: 250px;
+        /* Reduce height for mobile */
+    }
+
+    .carousel-images img {
+        height: 250px;
+    }
+}
+
+/* تنسيق الزر العائم */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    /* المسافة من الأسفل */
+    left: 20px;
+    /* المسافة من اليسار */
+    background-color: #25D366;
+    /* لون الواتساب */
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+    /* تأثير الحركة */
+}
+
+/* التأثير عند التمرير */
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    /* تكبير الزر */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    /* زيادة الظل */
+}
+
+/* إضافة تأثير الحركة للبوتون */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        /* حركة صعود وهبوط */
+    }
+}
+
+.whatsapp-button i {
+    font-size: 35px;
+    /* زيادة حجم الأيقونة */
+}

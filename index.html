@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <title>AlQadi-4K</title>
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="navbar">
+            <!-- الشعار -->
+            <img src="image11.jpg" alt="Logo" width="50px" height="50px">
+            <a href="#" class="logo">AlQadi-4K</a>
+
+            <!-- زر فتح القائمة الجانبية (على الشاشات الصغيرة) -->
+            <button class="side-menu-btn" onclick="toggleSideMenu()">☰</button>
+
+            <!-- القوائم المنسدلة في الشاشات الكبيرة -->
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#packages">الباقات</a></li>
+                <li><a href="#why-us">لماذا نحن</a></li>
+
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+                <li>
+                    <a href="#apps">حمل تطبيقاتنا</a>
+                    <!-- روابط تحميل التطبيقات 
+                    <div class="dropdown">
+                        <a href="https://play.google.com/store" target="_blank" title="حمل تطبيقنا من جوجل">
+                            جوجل بلاي
+                        </a>
+                        <a href="https://apps.apple.com" target="_blank" title="حمل تطبيقنا من آب ستور">
+                            آب ستور
+                        </a>
+                    </div> -->
+                </li>
+            </ul>
+
+            <!-- روابط التطبيقات (ظهورها في الشاشات الكبيرة فقط) -->
+            <!-- <div class="app-links">
+                <a href="https://play.google.com/store" target="_blank" title="حمل تطبيقنا من جوجل">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Google_Play_icon.svg/1024px-Google_Play_icon.svg.png"
+                        alt="Google Play" width="40">
+                </a>
+                <a href="https://apps.apple.com" target="_blank" title="حمل تطبيقنا من آب ستور">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Apple_Logo.svg" alt="Apple Store"
+                        width="40">
+                </a>
+            </div> -->
+        </div>
+    </header>
+
+    <!-- نافذة القائمة الجانبية -->
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" onclick="closeSideMenu()">×</a>
+        <a href="#home">الرئيسية</a>
+        <a href="#packages">الباقات</a>
+        <a href="#why-us">لماذا نحن</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+        <a href="#apps">حمل تطبيقاتنا</a>
+    </div>
+
+    <!-- زر الواتساب العائم -->
+    <a href="https://wa.me/966569056680" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Image Carousel Section -->
+    <div class="slider" id="home">
+        <!-- السلايدر الصور -->
+        <div class="slides">
+            <!-- <img src="image1.jpg" alt="صورة 1"> -->
+            <!-- <img src="image2.jpg" alt="صورة 2"> -->
+            <img src="image3.jpg" alt="صورة 3" style="height: 400px;width: 100%">
+            <img src="image4.jpg" alt="صورة 4" style="height: 400px;width: 100%">
+            <img src="image5.jpg" alt="صورة 4" style="height: 400px;width: 100%">
+            <img src="image6.jpg" alt="صورة 4" style="height: 400px; width: 100%;">
+        </div>
+
+        <!-- أزرار التنقل -->
+        <button class="prev">&#10095;</button>
+        <button class="next">&#10094;</button>
+
+        <!-- النقاط أسفل السلايدر -->
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+    <!-- لماذا نحن؟ -->
+
+    <section class="why-us-section" id="why-us">
+        <h2 class="why-us-title">لمـــاذا نحـــــن؟</h2>
+        <div class="why-us-cards">
+            <!-- Card 1: جودة عالية -->
+            <div class="cardwyus">
+                <h3>جودة عالية</h3>
+                <p>نقدم مشاهدة ممتعة بجودة عالية جدًا تصل إلى 4K، لتستمتع بتجربة مشاهدة لا مثيل لها.</p>
+            </div>
+            <!-- Card 2: خدمات الدعم -->
+            <div class="cardwyus">
+                <h3>خدمات الدعم</h3>
+                <p>دعم كامل 24 ساعة مع تحديثات مستمرة لضمان تجربة مرضية لعملائنا في جميع الأوقات.</p>
+            </div>
+            <!-- Card 3: سعر مناسب -->
+            <div class="cardwyus">
+                <h3>سعر مناسب</h3>
+                <p>نقدم لك أفضل سعر لافضل خدمة، لتستمتع بتجربة IPTV عالية الجودة بسعر معقول.</p>
+            </div>
+            <!-- Card 4: يدعم كل الأجهزة -->
+            <div class="cardwyus">
+                <h3>يدعم كل الأجهزة</h3>
+                <p>خدمة تدعم جميع الأجهزة المختلفة لتحصل على تجربة متكاملة، سواء على الهواتف أو الشاشات.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Subscription Cards Section -->
+    <section class="packages-section" id="packages">
+        <h2 class="packages-title">باقات مخصصة للجميع</h2>
+        <p class="packages-description">
+            استمتع بعالم من الترفيه ومتابعة أحدث الأفلام والمسلسلات ومباريات الدوريات العربية والأجنبية مع القاضي
+            بلاتينيوم.
+        </p>
+
+        <div class="package-cards">
+            <!-- باقة سنتين - جهازين -->
+            <!-- <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">394 ر.س / سنتين</p>
+                <p class="package-period">اشتراك سنتين</p>
+                <ul class="package-features">
+                    <li>يدعم جهازين</li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك سنة - جهازين')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div> -->
+
+            <!-- باقة سنتين - جهاز واحد -->
+            <!-- <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">249 ر.س / سنتين</p>
+                <p class="package-period">اشتراك سنتين</p>
+                <ul class="package-features">
+                    <li>يدعم جهاز واحد فقط</li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك سنة - جهازين')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div> -->
+
+            <!-- باقة 2سنة - جهازين -->
+            <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">90 ر.س / سنه</p>
+                <p class="package-period">اشتراك سنه مع ثلاثة اشهر مجانية</p>
+                <ul class="package-features">
+                    <li>يدعم جهاز واحد فقط </li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك سنه مع ثلاثة اشهر مجانية - جهاز')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div>
+
+            <!-- باقة سنة - جهاز واحد -->
+            <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">130 ر.س / سنه</p>
+                <p class="package-period">اشتراك سنه مع ثلاثة اشهر مجانية</p>
+                <ul class="package-features">
+                    <li>يدعم جهازين </li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك سنه مع ثلاثة اشهر مجانية - جهازين')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div>
+
+            <!-- باقة 9 أشهر - جهاز واحد -->
+            <!-- <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">119 ر.س / 9 اشهر</p>
+                <p class="package-period">اشتراك 9 شهر</p>
+                <ul class="package-features">
+                    <li>يدعم جهاز واحد فقط</li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك سنة - جهازين')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div> -->
+
+            <!-- باقة 6 أشهر - جهاز واحد -->
+            <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">60 ر.س / 6 اشهر</p>
+                <p class="package-period">اشتراك 6 شهر</p>
+                <ul class="package-features">
+                    <li>يدعم جهاز واحد فقط</li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك 6 اشهر ')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div>
+
+            <!-- باقة 3 أشهر - جهاز واحد -->
+            <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">42 ر.س / 3 اشهر</p>
+                <p class="package-period">اشتراك 3 اشهر</p>
+                <ul class="package-features">
+                    <li>يدعم جهاز واحد فقط</li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك 3 اشهر ')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div>
+
+            <!-- باقة شهر - جهاز واحد -->
+            <div class="package-card">
+                <h3>اشتراك القاضي</h3>
+                <p class="package-price">25 ر.س / شهر</p>
+                <p class="package-period">اشتراك شهر</p>
+                <ul class="package-features">
+                    <li>يدعم جهاز واحد فقط</li>
+                    <li>جميع جودات البث حتى 4K</li>
+                    <li>جميع القنوات</li>
+                </ul>
+                <button class="subscribe-btn" onclick="sendWhatsAppMessage('اشتراك شهر ')">
+                    <i class="icon fas fa-check-circle"></i> اشترك الآن
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+
+    <section class="faq-section" id="faq">
+        <h2 class="faq-title">الأسئلة الشائعة</h2>
+        <div class="faq-container">
+            <!-- سؤال 1 -->
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    ما هي سرعة الإنترنت المناسبة لتشغيل الخدمة ؟
+                </div>
+                <div class="faq-item-body">
+                    <p>لضمان تجربة مشاهدة ممتازة، ننصح بسرعة إنترنت لا تقل عن 10 ميجابايت في الثانية لتشغيل الخدمة بجودة
+                        1080p و 25 ميجابايت في الثانية لجودة 4K.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 2 -->
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    هل يمكنني الحصول علي فترة للتجربة ؟
+                </div>
+                <div class="faq-item-body">
+                    <p>نعم، نقدم لك فترة تجريبية مجانية لمدة 3 أيام حتى تتمكن من تجربة الخدمة والتأكد من جودتها قبل
+                        الاشتراك الكامل.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 3 -->
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    كيف سأتمكن من تشغيل الخدمة ؟
+                </div>
+                <div class="faq-item-body">
+                    <p>بعد الاشتراك، ستتلقى رابطًا لتنزيل التطبيق أو تفاصيل تسجيل الدخول إلى الخدمة، مع تعليمات خطوة
+                        بخطوة لتشغيل الخدمة على جهازك.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 4 -->
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    هل يمكنني وضع الإشتراك في أكثر من جهاز ؟
+                </div>
+                <div class="faq-item-body">
+                    <p>نعم، يمكنك استخدام اشتراكك على عدة أجهزة في نفس الوقت، بما في ذلك الهواتف الذكية، التلفزيونات
+                        الذكية، وأجهزة الكمبيوتر اللوحية.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 5 -->
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    ما هي المدة التي يستغرها إرسال وتشغيل الإشتراك بعد الدفع ؟
+                </div>
+                <div class="faq-item-body">
+                    <p>عادةً ما يتم تفعيل اشتراكك خلال 1-2 ساعة من الدفع، وستتلقى بريدًا إلكترونيًا يحتوي على تفاصيل
+                        تفعيل الاشتراك.</p>
+                </div>
+            </div>
+
+            <!-- سؤال 6 -->
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    هل يمكنني تشغيل الإشتراك في أي دولة بالعالم ؟
+                </div>
+                <div class="faq-item-body">
+                    <p>نعم، الخدمة متاحة في جميع أنحاء العالم. يمكنك تشغيل الخدمة في أي دولة طالما أن لديك اتصالاً
+                        بالإنترنت.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <!-- <div class="content">
+        <h2>اختر البيانات لإرسالها عبر واتساب</h2>
+        <div id="data-list"> -->
+    <!-- البيانات سيتم إضافتها ديناميكياً هنا -->
+    <!-- </div> 
+
+        <div class="input-message-container">
+            <textarea id="custom-message" placeholder="أضف رسالة خاصة هنا..."></textarea>
+            <br>
+            <button class="send-button" id="send-button">إرسال عبر واتساب</button>
+        </div>
+
+        <div class="loading" id="loading">جاري التحميل...</div>
+    </div> -->
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; AlQadi-4K BY </p><a href="abra715975855@gmail.com">Ibra</a>
+    </footer>
+
+    <script>
+        // Image Carousel functionality
+        let slideIndex = 1;
+
+        // عرض الصورة بناءً على الشريحة الحالية
+        showSlides(slideIndex);
+
+        // الانتقال بين الصور بواسطة الأزرار
+        document.querySelector('.prev').addEventListener('click', function () {
+            plusSlides(-1);
+        });
+
+        document.querySelector('.next').addEventListener('click', function () {
+            plusSlides(1);
+        });
+
+        // الانتقال إلى الشريحة المحددة
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        // عرض الصورة الحالية
+        function showSlides(n) {
+            let slides = document.querySelectorAll(".slides img");
+            let dots = document.querySelectorAll(".dot");
+
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // إخفاء جميع الصور
+            }
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" actives", ""); // إزالة التنشيط من النقاط
+            }
+
+            slides[slideIndex - 1].style.display = "block"; // عرض الصورة الحالية
+            dots[slideIndex - 1].className += " actives"; // تنشيط النقطة الحالية
+        }
+
+        // الانتقال التلقائي للصور كل 3 ثواني
+        setInterval(() => {
+            plusSlides(1);
+        }, 3000);
+
+        // // بيانات العرض
+        // const data = [
+        //     { title: "البيان الأول", description: "وصف البيان الأول" },
+        //     { title: "البيان الثاني", description: "وصف البيان الثاني" },
+        //     { title: "البيان الثالث", description: "وصف البيان الثالث" }
+        // ];
+
+        // const dataList = document.getElementById("data-list");
+        // const whatsappNumber = "967774369205"; // رقم الواتساب
+
+        // // عرض البيانات في الصفحة
+        // data.forEach(item => {
+        //     const div = document.createElement("div");
+        //     div.className = "data-item";
+        //     div.innerHTML = `${item.title} <i class="fas fa-arrow-right"></i>`;
+
+        //     // إضافة حدث عند النقر
+        //     div.onclick = () => {
+        //         const message = `مرحبًا، أريد الاستفسار عن: ${item.title}`;
+        //         const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        //         window.open(whatsappLink, "_blank");
+        //     };
+
+        //     dataList.appendChild(div);
+        // });
+
+        // // إرسال رسالة مخصصة عبر واتساب
+        // const sendButton = document.getElementById("send-button");
+        // const customMessageInput = document.getElementById("custom-message");
+        // const loadingIndicator = document.getElementById("loading");
+
+        // sendButton.onclick = () => {
+        //     const customMessage = customMessageInput.value.trim();
+        //     if (!customMessage) {
+        //         alert("يرجى إدخال رسالة.");
+        //         return;
+        //     }
+
+        //     const message = encodeURIComponent(customMessage);
+        //     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+        //     loadingIndicator.style.display = "block";
+        //     setTimeout(() => {
+        //         loadingIndicator.style.display = "none";
+        //         window.open(whatsappLink, "_blank");
+        //     }, 1500);
+        // };
+        // WhatsApp message function
+        function sendWhatsAppMessage(packageName) {
+            const whatsappNumber = '774369205'; // رقم الواتساب الخاص بك
+            const message = `مرحبًا، أرغب في الاشتراك في باقة: ${packageName}.`;
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappLink, '_blank');
+        }
+
+        // إظهار/إخفاء إجابات الأسئلة عند النقر
+
+
+
+        // document.querySelectorAll('.faq-item-header').forEach(item => {
+        //     item.addEventListener('click', function () {
+        //         const faqItem = item.parentElement;// الحصول على العنصر الأب (faq-item)
+        //         console.log(faqItem);  // تحقق من العنصر الذي يتم النقر عليه
+        //         faqItem.classList.toggle('activeq');// التبديل بين إضافة و إزالة الكلاس activeq
+        //     });
+        // });
+
+        document.querySelectorAll('.faq-item-header').forEach(item => {
+            item.addEventListener('click', function () {
+                const faqItem = item.parentElement; // الحصول على العنصر الأب (faq-item)
+
+                // إغلاق جميع الإجابات المفتوحة
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    if (faq !== faqItem) {
+                        faq.classList.remove('activeq'); // إزالة الكلاس activeq من الأسئلة الأخرى
+                    }
+                });
+
+                // التبديل بين إضافة وإزالة الكلاس activeq
+                faqItem.classList.toggle('activeq');
+            });
+        });
+
+
+        // فتح/إغلاق القائمة الجانبية
+        function toggleSideMenu() {
+            var sideMenu = document.getElementById("sideMenu");
+            var navLinks = document.querySelector(".nav-links");
+
+            if (sideMenu.style.width === "250px") {
+                sideMenu.style.width = "0";
+            } else {
+                sideMenu.style.width = "250px";
+            }
+
+            // إظهار/إخفاء القائمة العلوية في الشاشات الصغيرة
+            navLinks.classList.toggle('show');
+        }
+
+        // إغلاق القائمة الجانبية
+        function closeSideMenu() {
+            document.getElementById("sideMenu").style.width = "0";
+        }
+    </script>
+
+    <!-- Include FontAwesome for icons -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+
+</body>
+
+</html>
